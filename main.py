@@ -22,7 +22,7 @@ async def extract_data(request: DataRequest):
     
     try:
         response = client.models.generate_content(
-            model="gemini-3.6-flash",
+            model="gemini-3.7-flash",
             contents=prompt,
         )
         return {"extracted_data": response.text}
