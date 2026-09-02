@@ -22,9 +22,11 @@ async def extract_data(request: DataRequest):
     
     try:
         response = client.models.generate_content(
-            model="gemini-3.7-flash",
+            model="gemini-2.5-flash",
             contents=prompt,
         )
         return {"extracted_data": response.text}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    return {
+        "error": str(e)
+    }
