@@ -27,6 +27,6 @@ async def extract_data(request: DataRequest):
         )
         return {"extracted_data": response.text}
     except Exception as e:
-    return {
-        "error": str(e)
-    }
+        return {
+            "error": str(e)
+        }
